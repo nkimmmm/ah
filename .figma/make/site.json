@@ -1,0 +1,10 @@
+{
+  "description": "지역별 외국인 신규 유입 세대 데이터를 연도별 추이와 지역 순위로 시각화하고, 지역 검색 및 정규화 비교를 지원합니다.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

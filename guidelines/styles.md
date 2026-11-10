@@ -4,7 +4,8 @@
 
 파일 위치:
 - 폰트 `public/fonts/`: Pretendard-Regular, Medium, SemiBold, RisingCHAI-ExtraBold, RisingCHAI-Light (.woff2)
-- 달 이미지 `public/images/moon.webp` (800×800, 투명 배경)
+- FRORE 조명 이미지 `public/images/lamp.png` (800×800, 투명 배경)
+- 원본 제품 사진 `public/images/lamp-original.png` (706×972)
 
 ```css
 /* 메인 폰트 Pretendard */
@@ -49,7 +50,7 @@ button { border: 0; border-radius: 0; }
 .t-caption { font-size: 12px; font-weight: 400; }
 @media (max-width: 767px) { .t-display { font-size: 24px; } }
 
-/* 센서 달 */
+/* 센서 조명 오브젝트: 기존 컴포넌트 API와 맞추기 위해 moon 클래스명 유지 */
 .moon { --level: 0; width: min(72vw, 360px); aspect-ratio: 1; margin: 0 auto; animation: moon-float 6s ease-in-out infinite alternate; }
 .moon img { display: block; width: 100%; height: 100%; object-fit: contain;
   filter: brightness(calc(0.25 + 0.75 * var(--level))) drop-shadow(0 0 calc(var(--level) * 48px) var(--moon-glow));

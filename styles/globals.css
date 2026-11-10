@@ -83,10 +83,6 @@ button { border: 0; border-radius: 0; }
   font-weight: 300;
 }
 
-.concept strong {
-  font-weight: 600;
-}
-
 .product-header h1,
 .product-header p,
 .control-row p,

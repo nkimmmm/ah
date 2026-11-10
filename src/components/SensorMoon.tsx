@@ -9,15 +9,17 @@ type Props = {
 }
 
 export default function SensorMoon({ value, power, onPowerChange }: Props) {
-  const level =
+  const sensorLevel =
     value === undefined
       ? 0
       : Math.min(
           1,
           Math.max(0, (value - SENSOR_MIN) / (SENSOR_MAX - SENSOR_MIN)),
         )
+  const level = power ? Math.max(sensorLevel, 0.35) : 0
   const brightness = Math.round(level * 100)
   const style = { "--level": level } as CSSProperties
+  const imageSrc = `${import.meta.env.BASE_URL}images/lamp.png`
 
   return (
     <section className="moon-section" aria-label="조명 상태">
@@ -28,7 +30,7 @@ export default function SensorMoon({ value, power, onPowerChange }: Props) {
         role="img"
         aria-label={power ? `조명 밝기 ${brightness}%` : "조명 꺼짐"}
       >
-        <img src="/images/lamp.png" alt="" />
+        <img src={imageSrc} alt="" />
       </div>
       <p className="t-value current-value">
         {value === undefined ? "—" : value.toLocaleString("ko-KR")}

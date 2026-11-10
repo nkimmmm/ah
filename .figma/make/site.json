@@ -1,5 +1,6 @@
 {
-  "description": "Supabase Realtime으로 최신 센서값과 최근 100개 readings를 확인하는 대시보드입니다.",
+  "title": "FRORE",
+  "description": "FRORE is a frosted, translucent smart lamp that glows in response to live sensor readings.",
   "robots": {
     "index": false
   },

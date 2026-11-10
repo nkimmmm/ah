@@ -53,7 +53,9 @@ button { border: 0; border-radius: 0; }
 /* 센서 조명 오브젝트: 기존 컴포넌트 API와 맞추기 위해 moon 클래스명 유지 */
 .moon { --level: 0; width: min(72vw, 360px); aspect-ratio: 1; margin: 0 auto; animation: moon-float 6s ease-in-out infinite alternate; }
 .moon img { display: block; width: 100%; height: 100%; object-fit: contain;
-  filter: brightness(calc(0.25 + 0.75 * var(--level))) drop-shadow(0 0 calc(var(--level) * 48px) var(--moon-glow));
+  filter: brightness(calc(0.25 + 0.75 * var(--level)))
+    drop-shadow(0 0 calc(var(--level) * 48px) var(--moon-glow))
+    drop-shadow(0 0 calc(var(--level) * 24px) var(--moon-glow));
   transition: filter .4s; }
 .moon[data-power="off"] img { filter: brightness(0.12) grayscale(1); }
 @keyframes moon-float { from { transform: translateY(0); } to { transform: translateY(-10px); } }

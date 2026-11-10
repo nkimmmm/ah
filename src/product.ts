@@ -1,6 +1,6 @@
 export const PRODUCT = {
   name: "FRORE",
-  concept: "Light, held in frost.",
+  concept: "Light, Held in frost",
   description: "#frosted\n#translucent\n#floating _lantern\n#achromatic",
 }
 

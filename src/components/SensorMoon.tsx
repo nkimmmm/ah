@@ -1,12 +1,14 @@
 import type { CSSProperties } from "react"
 import { SENSOR_MAX, SENSOR_MIN } from "../product"
+import TouchSensor from "./TouchSensor"
 
 type Props = {
   value?: number
   power: boolean
+  onPowerChange: (power: boolean) => void
 }
 
-export default function SensorMoon({ value, power }: Props) {
+export default function SensorMoon({ value, power, onPowerChange }: Props) {
   const level =
     value === undefined
       ? 0
@@ -31,6 +33,7 @@ export default function SensorMoon({ value, power }: Props) {
       <p className="t-value current-value">
         {value === undefined ? "—" : value.toLocaleString("ko-KR")}
       </p>
+      <TouchSensor power={power} onPowerChange={onPowerChange} />
     </section>
   )
 }

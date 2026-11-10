@@ -49,7 +49,11 @@ export default function App() {
   return (
     <main className="app-shell">
       <ProductHeader />
-      <SensorMoon value={readings.at(-1)?.value} power={power} />
+      <SensorMoon
+        value={readings.at(-1)?.value}
+        power={power}
+        onPowerChange={setPower}
+      />
 
       <div className="lower-grid">
         <section className="controls" aria-label="조명 제어">

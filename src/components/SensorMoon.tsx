@@ -18,15 +18,15 @@ export default function SensorMoon({ value, power }: Props) {
   const style = { "--level": level } as CSSProperties
 
   return (
-    <section className="moon-section" aria-label="달 상태">
+    <section className="moon-section" aria-label="조명 상태">
       <div
         className="moon"
         style={style}
         data-power={power ? "on" : "off"}
         role="img"
-        aria-label={power ? `달 밝기 ${brightness}%` : "달 꺼짐"}
+        aria-label={power ? `조명 밝기 ${brightness}%` : "조명 꺼짐"}
       >
-        <img src="/images/moon.webp" alt="" />
+        <img src="/images/lamp.png" alt="" />
       </div>
       <p className="t-value current-value">
         {value === undefined ? "—" : value.toLocaleString("ko-KR")}

@@ -95,6 +95,7 @@ button { border: 0; border-radius: 0; }
   max-width: 640px;
   margin-top: var(--space-3) !important;
   color: var(--ink-muted);
+  white-space: pre-line;
 }
 
 .placeholder,

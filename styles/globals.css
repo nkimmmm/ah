@@ -125,7 +125,7 @@ button { border: 0; border-radius: 0; }
 }
 
 .moon-section .moon {
-  width: min(86vw, 520px);
+  width: min(100%, 720px);
   align-self: flex-end;
   margin: 0;
 }

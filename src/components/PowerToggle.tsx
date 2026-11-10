@@ -35,7 +35,9 @@ export default function PowerToggle({ power, onPowerChange }: Props) {
           aria-label="LED 전원"
           onClick={() => void togglePower()}
         >
-          <span />
+          <span className="power-track" aria-hidden="true">
+            <span />
+          </span>
         </button>
       </div>
       {error && (

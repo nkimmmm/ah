@@ -72,7 +72,10 @@ export default function TouchSensor({ power, onPowerChange }: Props) {
       >
         터치 센서
       </button>
-      <p className="t-caption touch-status" role="status">
+      <p
+        className={`t-caption touch-status ${error ? "error" : ""}`}
+        role="status"
+      >
         {error
           ? "전원 변경 실패, 다시 시도"
           : pressed

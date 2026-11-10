@@ -25,12 +25,15 @@
 
   --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
   --space-6: 24px; --space-8: 32px; --space-12: 48px;
+  --content-max: 1120px;
+  --copy-max: 640px;
+  --moon-size: 360px;
+  --control-height: 44px;
+  --switch-width: 52px;
+  --switch-height: 32px;
+  --switch-thumb: 24px;
   color-scheme: dark;
 }
-
-body { margin: 0; background: var(--surface); color: var(--ink); font-family: var(--font-sans); }
-:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
-button { border: 0; border-radius: 0; }
 
 /* 타입: 자간, 행간 지정 없음 */
 .t-display { font-family: var(--font-display); font-size: 40px; font-weight: 800; }
@@ -56,20 +59,34 @@ button { border: 0; border-radius: 0; }
   }
 
   body {
+    margin: 0;
     min-width: 320px;
     min-height: 100vh;
     overflow-x: hidden;
+    background: var(--surface);
+    color: var(--ink);
+    font-family: var(--font-sans);
   }
 
   button {
+    border: 0;
+    border-radius: 0;
     font-family: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
   }
 }
 
 .app-shell {
   width: 100%;
-  max-width: 1120px;
+  max-width: var(--content-max);
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
   margin: 0 auto;
   padding: var(--space-8) var(--space-4);
 }
@@ -78,21 +95,13 @@ button { border: 0; border-radius: 0; }
   width: 100%;
 }
 
-.product-name {
-  font-size: 48px;
-  font-weight: 300;
-}
-
-.concept strong {
-  font-weight: 600;
-}
-
 .product-header h1,
 .product-header p,
 .control-row p,
 .current-value,
 .chart-empty,
-.power-error {
+.power-error,
+.touch-status {
   margin: 0;
 }
 
@@ -101,10 +110,9 @@ button { border: 0; border-radius: 0; }
 }
 
 .description {
-  max-width: 640px;
+  max-width: var(--copy-max);
   margin-top: var(--space-3) !important;
   color: var(--ink-muted);
-  white-space: pre-line;
 }
 
 .placeholder,
@@ -125,9 +133,7 @@ button { border: 0; border-radius: 0; }
 }
 
 .moon-section .moon {
-  width: min(100%, 720px);
-  align-self: flex-end;
-  margin: 0;
+  width: min(72vw, var(--moon-size));
 }
 
 .current-value {
@@ -144,7 +150,7 @@ button { border: 0; border-radius: 0; }
 
 .touch-sensor {
   min-width: 160px;
-  min-height: 56px;
+  min-height: var(--control-height);
   padding: var(--space-3) var(--space-6);
   background: var(--ink);
   color: var(--surface);
@@ -163,10 +169,15 @@ button { border: 0; border-radius: 0; }
   color: var(--ink-muted);
 }
 
+.touch-status.error {
+  color: var(--danger);
+}
+
 .lower-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-8);
+  align-items: start;
 }
 
 .controls {
@@ -224,7 +235,7 @@ button { border: 0; border-radius: 0; }
 }
 
 .connection-button {
-  min-height: 44px;
+  min-height: var(--control-height);
   flex: 0 0 auto;
   padding: var(--space-3) var(--space-4);
   background: var(--brand);
@@ -248,30 +259,39 @@ button { border: 0; border-radius: 0; }
 }
 
 .power-toggle {
-  width: 52px;
-  height: 44px;
+  width: var(--switch-width);
+  min-height: var(--control-height);
   display: flex;
   align-items: center;
-  flex: 0 0 52px;
-  padding: 6px 4px;
-  background: var(--off);
+  flex: 0 0 var(--switch-width);
+  padding: 0;
+  background: transparent;
   cursor: pointer;
 }
 
-.power-toggle.on {
+.power-track {
+  width: var(--switch-width);
+  height: var(--switch-height);
+  display: flex;
+  align-items: center;
+  padding: var(--space-1);
+  background: var(--off);
+}
+
+.power-toggle.on .power-track {
   background: var(--brand);
 }
 
-.power-toggle span {
-  width: 24px;
-  height: 24px;
+.power-track > span {
+  width: var(--switch-thumb);
+  height: var(--switch-thumb);
   display: block;
   background: var(--surface);
   transform: translateX(0);
   transition: transform 150ms;
 }
 
-.power-toggle.on span {
+.power-toggle.on .power-track > span {
   background: var(--on-brand);
   transform: translateX(20px);
 }
@@ -328,17 +348,12 @@ button { border: 0; border-radius: 0; }
 
 @media (min-width: 768px) {
   .app-shell {
+    gap: var(--space-12);
     padding: var(--space-12) var(--space-8);
   }
 
   .lower-grid {
     grid-template-columns: 1fr 2fr;
     gap: var(--space-12);
-  }
-}
-
-@media (max-width: 767px) {
-  .product-name {
-    font-size: 32px;
   }
 }

@@ -9,6 +9,8 @@ const placeholders = {
 }
 
 export default function ProductHeader() {
+  const [conceptLead, ...conceptRest] = PRODUCT.concept.split(" ")
+
   useEffect(() => {
     document.title = PRODUCT.name || placeholders.name
   }, [])
@@ -23,7 +25,14 @@ export default function ProductHeader() {
         {PRODUCT.name || placeholders.name}
       </h1>
       <p className={`t-label concept ${PRODUCT.concept ? "" : "placeholder"}`}>
-        {PRODUCT.concept || placeholders.concept}
+        {PRODUCT.concept ? (
+          <>
+            <strong>{conceptLead}</strong>
+            {conceptRest.length > 0 ? ` ${conceptRest.join(" ")}` : ""}
+          </>
+        ) : (
+          placeholders.concept
+        )}
       </p>
       <p
         className={`t-body description ${

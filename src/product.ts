@@ -1,7 +1,7 @@
 export const PRODUCT = {
   name: "FRORE",
-  concept: "Light, Held in frost",
-  description: "#frosted\n#translucent\n#floating _lantern\n#achromatic",
+  concept: "Light, held in frost.",
+  description: "#frosted #translucent #floating _lantern #achromatic",
 }
 
 export const DEVICE_ID = "lamp-01"

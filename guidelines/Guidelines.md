@@ -26,6 +26,10 @@
 
 제품 이름, 컨셉, 설명은 `src/product.ts`의 `PRODUCT` 객체 한 곳에서만 정의하고 화면은 거기서 읽는다. 비어 있으면 `[제품 이름]` 같은 자리표시를 `--ink-muted`로 보여준다.
 
+- 제품 이름: `FRORE`
+- 제품 컨셉: `Light, held in frost.`
+- 제품 설명: `#frosted #translucent #floating _lantern #achromatic`
+
 | 슬롯 | 위치 |
 | --- | --- |
 | 제품 이름 | `PRODUCT.name` |

@@ -124,6 +124,12 @@ button { border: 0; border-radius: 0; }
   justify-content: center;
 }
 
+.moon-section .moon {
+  width: min(86vw, 520px);
+  align-self: flex-end;
+  margin: 0;
+}
+
 .current-value {
   margin-top: var(--space-6);
   color: var(--ink);
